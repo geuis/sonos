@@ -1,0 +1,17 @@
+{
+  "name": "nodesonos",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "node-sonos": "~0.3.5",
+    "request": "~2.34.0",
+    "xml2js": "~0.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
