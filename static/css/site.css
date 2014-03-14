@@ -1,3 +1,153 @@
-body {
+[template] {
+  visibility: hidden;
+}
+[template].show {
+  visibility: visible;
+}
+html, body {
   background: #000;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-filter: blur(5px);
+}
+.wrapper {
+  border: 1px solid #222;
+  width: 80%;
+  height: 70%;
+  margin: 10% auto;
+  position: relative;
+  z-index: 1;
+  background: rgba(0,0,0, 0.4);
+  padding: 20px;
+}
+
+.player img, .player .info {
+  display: block;
+  float: left;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.player .info {
+  width: 350px;
+  margin: 0 0 0 20px;
+}
+.player span {
+  font-family: 'Oswald';
+  font-size: weight: 700;
+  font-size: 30px;
+}
+
+.lyrics {
+  position: absolute;
+  top: 160px;
+  left: 440px;
+  width: 350px;
+  font-size: 14px;
+}
+
+.queue {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 330px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  cursor: pointer;
+}
+.queue > div {
+  border-bottom: 1px solid #ccc;
+  width: 330px;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 10px;
+  white-space: nowrap;
+}
+.queue > div:hover {
+  background: rgba(200,200,200,0.5);
+}
+.queue > div:last-child {
+  margin-bottom: 20px;
+}
+.queue > div img {
+  vertical-align: middle;
+}
+
+.controls {
+  margin: 20px 0 0 125px;
+  width: 200px;
+
+}
+.controls:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.controls > div {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+}
+.controls > div:hover {
+  cursor: pointer;
+}
+.controls .play,
+.controls .next {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 20px 0 20px 40px;
+  border-color: transparent transparent transparent #ffffff;
+}
+.controls .previous:before,
+.controls .next:after,
+.controls .pause:before,
+.controls .pause:after {
+  content: '';
+  display: block;
+  height: 40px;
+  width: 10px;
+  background: #fff;
+  position: absolute;
+}
+
+.controls .previous {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 20px 40px 20px 0;
+  border-color: transparent #ffffff transparent transparent;
+}
+.controls .previous:before,
+.controls .next:after {
+  top: -20px;
+}
+.controls .next:after {
+  right: 0;
+}
+
+.controls .pause {
+  width: 30px;
+  height: 40px;
+  position: relative;
+}
+.controls .pause:after {
+  margin: 0 0 0 20px;
+}
+
+.time {
+  line-height: 40px;
 }

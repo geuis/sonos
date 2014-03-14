@@ -3,4 +3,3 @@ var web = require('./lib/web_server');
 
 // start web server
 server.init();
-console.log(web);

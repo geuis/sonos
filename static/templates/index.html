@@ -1,13 +1,47 @@
 <!doctype html>
 <html>
 <head>
+  <link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen">
   <link rel="stylesheet" href="/static/css/site.css" type="text/css" media="screen">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
-  booyak
+  <div class="wrapper">
+    <div class="player">
+      <div class="clearfix" template="player">
+        <img src="{{{albumArtURL}}}" width="400" height="400" class="album_art">
+        <div class="info">
+          <div class="title">  <span>Title</span> {{title}}</div>
+          <div class="artist"> <span>Artist</span> {{artist}}</div>
+          <div class="album">  <span>Album</span> {{album}}</div>
+        </div>
+      </div>
+      <div class="lyrics" template="lyrics">{{lyrics}}</div>
+    </div>
 
+    <div class="queue" template="queue">
+      {{#songs}}
+      <div index="{{queue_id}}">
+        <img src="{{albumArtURI}} width="25" height="25"">
+        {{title}}
+      </div>
+      {{/songs}}
+    </div>
+
+    <div class="controls">
+      <div class="previous"></div>
+      <div class="play"></div>
+      <div class="next"></div>
+      <div class="time" template="tracktime">{{position}} of {{duration}} seconds</div>
+    </div>
+
+  </div>
+  <video id="bgvideo" muted></video>
   <script src="/static/js/jquery-2.1.0.min.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
+  <script src="/static/js/mustache.js"></script>
+  <script src="http://charles-macbook.local:9001/socket.io/socket.io.js"></script>
   <script src="/static/js/app.js"></script>
 </body>
 </html>
